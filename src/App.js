@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import Counter from './features/counter/Counter';
 import './App.css';
+import OtherComponent from './OtherComponent';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           </a>
         </span>
       </header>
+      <OtherComponent/>
     </div>
   );
 }

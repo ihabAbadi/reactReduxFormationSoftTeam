@@ -13,6 +13,8 @@ const reducer = (state,action) => {
       case "Decrement" :
      return {...state, value : state.value  - 1}
       break;
+    case "withValue": 
+    return {...state, value : action.data}
     default:
       return {...initialState}
       break;

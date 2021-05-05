@@ -71,6 +71,20 @@ class Counter extends PureComponent {
   constructor(props) {
     super(props)
   }
+
+  render() {
+    
+    return(
+      <div>
+        Value of store {this.props.counter.value}
+        <div>
+          <div><input type="text" onChange={(e) => this.props.withValue(e.target.value)}/></div>
+          <button onClick={()=> this.props.increment()}>+</button>
+          <button onClick={()=> this.props.decrement()}>-</button>
+        </div>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state) => {
@@ -79,12 +93,15 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapActionToProps = (dipatch) => ({
+const mapActionToProps = (dispatch) => ({
   increment : () => {
-    dispatch("Increment")
+    dispatch({type : "Increment"})
   },
   decrement : () => {
-    dispatch("Decrement")
+    dispatch({type : "Decrement"})
+  },
+  withValue : (data) => {
+    dispatch({type:"withValue", data:data})
   }
 })
 
