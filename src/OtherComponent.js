@@ -10,6 +10,7 @@ class OtherComponent extends PureComponent {
         return ( 
             <div>
                 Value of counter {this.props.counter.value}
+
             </div>
          );
     }
@@ -17,6 +18,12 @@ class OtherComponent extends PureComponent {
 const mapStateToProps = (state) => {
     return {
         counter : state.counter
+    }
+}
+
+const mapActionToProps = (dispatch) => {
+    return {
+        increment : dispatch({type:'Increment'})
     }
 }
 export default connect(mapStateToProps)(OtherComponent)
