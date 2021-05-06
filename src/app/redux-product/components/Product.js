@@ -19,8 +19,8 @@ export class Product extends PureComponent  {
                 </div>
                 <div className="row">
                     {/* <button className="btn btn-danger col" onClick={() => this.props.deleteProduct(product.id)}>supprimer</button>
-                    <button className="btn btn-primary col" onClick={() => this.props.edit(product)}>modifier</button>
-                    <button className="btn btn-secondary col" onClick={() => this.props.addToCart(product.id)}>Ajouter panier</button> */}
+                    <button className="btn btn-primary col" onClick={() => this.props.edit(product)}>modifier</button> */}
+                    <button className="btn btn-secondary col" onClick={() => this.props.addProductToCart(product)}>Ajouter panier</button>
 
                 </div>
             </div>

@@ -19,7 +19,7 @@ export class ListProducts extends PureComponent {
                 <div className="row ">
                     {this.props.products.map((element, index) => {
                         return (
-                            <Product key={index} product={element}></Product>
+                            <Product addProductToCart={this.props.addProductToCart} key={index} product={element}></Product>
                         )
                     })}
                 </div>

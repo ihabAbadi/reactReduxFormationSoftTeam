@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import ListProducts from "./containers/ListProducts"
 import Search from './containers/Search';
+import Cart from './containers/Cart';
 class Home extends PureComponent {
     constructor(props) {
         super(props);
@@ -12,6 +13,7 @@ class Home extends PureComponent {
             <Provider store={store}>
                 <Search></Search>
                 <ListProducts/>
+                <Cart></Cart>
             </Provider>
          );
     }
