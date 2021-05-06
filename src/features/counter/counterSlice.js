@@ -4,6 +4,7 @@ import { fetchCount } from './counterAPI';
 const initialState = {
   value: 0,
   status: 'idle',
+  loading:false
 };
 const reducer = (state,action) => {
   switch(action.type) {
@@ -15,6 +16,16 @@ const reducer = (state,action) => {
       break;
     case "withValue": 
     return {...state, value : action.data}
+    case "startAsync":
+      console.log("start")
+      console.log(state)
+      return {...state, loading:true}
+    case "endAsync" : 
+      console.log("end")
+      console.log(state)
+      return {...state, loading:false}
+    case "async" :
+      return {...state}
     default:
       return {...initialState}
       break;
