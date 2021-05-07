@@ -12,7 +12,6 @@ export class ListProducts extends PureComponent {
 
     }
 
-
     render() {
         return (
             <div className="container">

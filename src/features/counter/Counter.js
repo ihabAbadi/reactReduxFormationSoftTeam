@@ -74,7 +74,6 @@ class Counter extends PureComponent {
   }
 
   render() {
-    
     return(
       <div>
         Value of store {this.props.counter.value}

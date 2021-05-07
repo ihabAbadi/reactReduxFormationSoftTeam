@@ -6,10 +6,12 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import Home from './app/redux-product/Home';
+import { ComponentWithHook } from './app/exemple-hook/ComponentWithHook';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home></Home>
+    {/* <Home></Home> */}
+    <ComponentWithHook></ComponentWithHook>
     {/* <Provider store={store}>
       <App></App>
     </Provider> */}
