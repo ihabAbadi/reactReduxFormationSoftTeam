@@ -9,10 +9,10 @@ import Home from './app/redux-product/Home';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Home></Home> */}
-    <Provider store={store}>
+    <Home></Home>
+    {/* <Provider store={store}>
       <App></App>
-    </Provider>
+    </Provider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

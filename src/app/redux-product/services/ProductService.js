@@ -6,6 +6,14 @@ const products = [
 ]
 
 
+export const getProductsAync = (search) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            (search == undefined) ? resolve(products) : resolve(products.filter(p=> p.title.indexOf(search) >= 0))
+        },2000)
+    })
+}
+
 export const getProducts = (search) => {
-    return (search == undefined) ? products : products.filter(p=> p.title.indexOf(search) >= 0)        
+    return  (search == undefined) ? products : products.filter(p=> p.title.indexOf(search) >= 0)
 }

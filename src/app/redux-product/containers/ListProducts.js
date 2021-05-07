@@ -5,7 +5,8 @@ import {ListProducts} from "./../components/ListProducts"
 
 const mapStateTopProps = (state) => {
     return {
-        products : state.products.products
+        products : state.products.products,
+        loading : state.products.loading
     }
 }
 const mapActionToProps = (dispatch) => {
