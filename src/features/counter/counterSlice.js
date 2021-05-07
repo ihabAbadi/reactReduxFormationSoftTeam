@@ -1,11 +1,27 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
-
+const testPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+      resolve()
+  },4000)
+})
 const initialState = {
   value: 0,
   status: 'idle',
   loading:false
 };
+
+export const asyncCallApi = (data) => {
+  return dispatch => {
+    dispatch({type:"startAsync"})
+    testPromise.then(() => {
+      setTimeout(()=> {
+        dispatch({type:"endAsync", data:data})
+      }, 4000)
+    })
+  }
+}
+
 const reducer = (state,action) => {
   switch(action.type) {
     case "Increment" :
@@ -23,7 +39,7 @@ const reducer = (state,action) => {
     case "endAsync" : 
       console.log("end")
       console.log(state)
-      return {...state, loading:false}
+      return {...state, loading:false, value : action.data}
     case "async" :
       return {...state}
     default:

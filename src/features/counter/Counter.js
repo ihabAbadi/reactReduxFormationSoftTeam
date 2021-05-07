@@ -7,6 +7,7 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
+  asyncCallApi,
 } from './counterSlice';
 import styles from './Counter.module.css';
 import { connect } from 'react-redux';
@@ -81,7 +82,7 @@ class Counter extends PureComponent {
         <div>
           <div><input type="text" onChange={(e) => this.props.withValue(e.target.value)}/></div>
           
-          <button onClick={()=> this.props.startAsync()}>start async</button>
+          <button onClick={()=> this.props.propsStartAsync(10)}>start async</button>
           <button onClick={()=> this.props.increment()}>+</button>
           <button onClick={()=> this.props.decrement()}>-</button>
         </div>
@@ -106,8 +107,8 @@ const mapActionToProps = (dispatch) => ({
   withValue : (data) => {
     dispatch({type:"withValue", data:data})
   },
-  startAsync : () => {
-    dispatch({type:"async"})
+  propsStartAsync : (data) => {
+    dispatch(asyncCallApi(data))
   }
 })
 

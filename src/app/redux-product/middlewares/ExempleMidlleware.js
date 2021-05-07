@@ -1,12 +1,15 @@
 export const functionMiddleware = storeApi => next => action => {
-    
-    if(action.type == "async") {
-        //Appel async
-        storeApi.dispatch({type:"startAsync"})
-        testPromise.then(() => {
-            storeApi.dispatch({type:"endAsync"})
-        })
-    }
+    // if(typeof action == "function") {
+    //     const fonction = action()
+    //     fonction(storeApi.dispatch)
+    // }
+    // if(action.type == "async") {
+    //     //Appel async
+    //     storeApi.dispatch({type:"startAsync"})
+    //     testPromise.then(() => {
+    //         storeApi.dispatch({type:"endAsync"})
+    //     })
+    // }
     return next(action)
 }
 
